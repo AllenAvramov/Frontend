@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Frontend",
-    "slug": "Frontend",
+    "name": "Frontend_Splitify",
+    "slug": "Frontend_Splitify",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
