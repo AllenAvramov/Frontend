@@ -14,19 +14,17 @@ export default function LoginScreen() {
       Alert.alert("Missing Fields", "Please fill in both email and password.");
       return;
     }
-  
+
     try {
       const res = await api.post("/login", {
         email,
         password,
       });
-  
+
       const { accessToken, refreshToken } = res.data;
-  
-      Alert.alert("Login success", `Token: ${accessToken}`);
       await AsyncStorage.setItem('accessToken', accessToken);
       await AsyncStorage.setItem('refreshToken', refreshToken);
-      router.replace('/home'); // go to protected route after login
+      router.replace('/(tabs)/Home'); // go to protected route after login
     } catch (err) {
       console.error(err);
       Alert.alert("Error", err.response?.data || "Server error");
@@ -35,22 +33,25 @@ export default function LoginScreen() {
 
   return (
     <View className="flex-1 justify-center bg-white px-6">
+      
       <Text className="text-3xl font-bold text-center mb-8 text-gray-800">
         Log In
       </Text>
 
       <TextInput
-        className="border border-gray-300 rounded-md p-4 mb-4 bg-gray-50"
+        className="border border-gray-300 rounded-md p-4 mb-4 bg-gray-50 placeholder-gray-500"
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
         autoCapitalize="none"
         keyboardType="email-address"
+        placeholderTextColor="#6B7280"
       />
 
       <TextInput
-        className="border border-gray-300 rounded-md p-4 mb-6 bg-gray-50"
+        className="border border-gray-300 rounded-md p-4 mb-6 bg-gray-50 placeholder-gray-500"
         placeholder="Password"
+        placeholderTextColor="#6B7280"
         value={password}
         onChangeText={setPassword}
         secureTextEntry

@@ -37,27 +37,30 @@ export default function RegisterScreen() {
       </Text>
 
       <TextInput
-        className="border border-gray-300 rounded-md p-4 mb-4 bg-gray-50"
+        className="border border-gray-300 rounded-md p-4 mb-4 bg-gray-50 placeholder-gray-500"
         placeholder="Name"
         value={name}
         onChangeText={setName}
+        placeholderTextColor="#6B7280"
       />
 
       <TextInput
-        className="border border-gray-300 rounded-md p-4 mb-4 bg-gray-50"
+        className="border border-gray-300 rounded-md p-4 mb-4 bg-gray-50 placeholder-gray-500"
         placeholder="Email"
         autoCapitalize="none"
         keyboardType="email-address"
         value={email}
         onChangeText={setEmail}
+        placeholderTextColor="#6B7280"
       />
 
       <TextInput
-        className="border border-gray-300 rounded-md p-4 mb-6 bg-gray-50"
+        className="border border-gray-300 rounded-md p-4 mb-6 bg-gray-50 placeholder-gray-500"
         placeholder="Password"
         secureTextEntry
         value={password}
         onChangeText={setPassword}
+        placeholderTextColor="#6B7280"
       />
 
       <TouchableOpacity
